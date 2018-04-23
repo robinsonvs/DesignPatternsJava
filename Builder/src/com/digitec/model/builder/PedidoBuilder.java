@@ -1,6 +1,10 @@
 package com.digitec.model.builder;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+
 import com.digitec.model.Cliente;
+import com.digitec.model.ItemPedido;
 import com.digitec.model.PedidoVenda;
 
 public class PedidoBuilder {
@@ -18,6 +22,18 @@ public class PedidoBuilder {
 	
 	public PedidoBuilder comClienteNormal(String nome){
 		definirCliente(nome, false);
+		return this;
+	}
+	
+	public PedidoBuilder comIem(String nome, Integer quantidade, String valorUnitario){
+		ItemPedido item = new ItemPedido();
+		item.setNome(nome);
+		item.setQuantidade(quantidade);
+		item.setValorUnitario(new BigDecimal(valorUnitario));
+		if (this.instancia.getItensPedido() == null){
+			this.instancia.setItensPedido(new ArrayList<ItemPedido>());
+		}
+		this.instancia.getItensPedido().add(item);
 		return this;
 	}
 	

@@ -42,7 +42,15 @@ public class PedidoVendaTest {
 
 	@Test
 	public void deveCalcularValorTotalClienteVipBuilder(){
-								
+		PedidoVenda pedidoVenda = new PedidoBuilder()
+								.comClienteVip("Joao")
+								.comIem("Calculadora", 2, "200")
+								.comIem("Mochila", 1, "200")
+								.construir();
+		
+		BigDecimal valorTotal = pedidoVenda.getValorTotal();
+		
+		assertEquals(new BigDecimal("576").doubleValue(), valorTotal.doubleValue(), 0.0001);
 	}
 	
 }

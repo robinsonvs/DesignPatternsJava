@@ -46,6 +46,8 @@ public class PedidoVendaTest {
 								.comClienteVip("Joao")
 								.comIem("Calculadora", 2, "200")
 								.comIem("Mochila", 1, "200")
+								//obrigando o uso do numero
+								.comNumeroPedido("045020")
 								.construir();
 		
 		BigDecimal valorTotal = pedidoVenda.getValorTotal();

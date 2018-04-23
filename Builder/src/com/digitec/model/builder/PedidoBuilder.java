@@ -25,6 +25,11 @@ public class PedidoBuilder {
 		return this;
 	}
 	
+	public PedidoBuilderValido comNumeroPedido(String numero){
+		this.instancia.setNumero(numero);
+		return new PedidoBuilderValido(instancia);
+	}
+	
 	public PedidoBuilder comIem(String nome, Integer quantidade, String valorUnitario){
 		ItemPedido item = new ItemPedido();
 		item.setNome(nome);
@@ -43,9 +48,6 @@ public class PedidoBuilder {
 		cliente.setVip(vip);
 		this.instancia.setCliente(cliente);
 	}
-	
-	public PedidoVenda construir(){
-		return this.instancia;
-	}
+
 
 }

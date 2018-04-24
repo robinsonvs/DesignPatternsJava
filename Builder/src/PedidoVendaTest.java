@@ -6,10 +6,10 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.digitec.model.Cliente;
-import com.digitec.model.ItemPedido;
-import com.digitec.model.PedidoVenda;
-import com.digitec.model.builder.PedidoBuilder;
+import Builder.src.com.digitec.model.Cliente;
+import Builder.src.com.digitec.model.ItemPedido;
+import Builder.src.com.digitec.model.PedidoVenda;
+import Builder.src.com.digitec.model.builder.PedidoBuilder;
 
 public class PedidoVendaTest {
 

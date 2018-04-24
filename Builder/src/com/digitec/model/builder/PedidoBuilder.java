@@ -30,7 +30,7 @@ public class PedidoBuilder {
 		return new PedidoBuilderValido(instancia);
 	}
 	
-	public PedidoBuilder comIem(String nome, Integer quantidade, String valorUnitario){
+	public PedidoBuilder comItem(String nome, Integer quantidade, String valorUnitario){
 		ItemPedido item = new ItemPedido();
 		item.setNome(nome);
 		item.setQuantidade(quantidade);

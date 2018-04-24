@@ -6,10 +6,10 @@ import java.util.List;
 
 import org.junit.Test;
 
-import Builder.src.com.digitec.model.Cliente;
-import Builder.src.com.digitec.model.ItemPedido;
-import Builder.src.com.digitec.model.PedidoVenda;
-import Builder.src.com.digitec.model.builder.PedidoBuilder;
+import com.digitec.model.Cliente;
+import com.digitec.model.ItemPedido;
+import com.digitec.model.PedidoVenda;
+import com.digitec.model.builder.PedidoBuilder;
 
 public class PedidoVendaTest {
 
@@ -44,8 +44,8 @@ public class PedidoVendaTest {
 	public void deveCalcularValorTotalClienteVipBuilder(){
 		PedidoVenda pedidoVenda = new PedidoBuilder()
 								.comClienteVip("Joao")
-								.comIem("Calculadora", 2, "200")
-								.comIem("Mochila", 1, "200")
+								.comItem("Calculadora", 2, "200")
+								.comItem("Mochila", 1, "200")
 								//obrigando o uso do numero
 								.comNumeroPedido("045020")
 								.construir();

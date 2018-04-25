@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 import com.digitec.cobranca.model.CartaoCredito;
 import com.digitec.cobranca.model.Cliente;
+import com.digitec.cobranca.service.AutorizadorCartaoCredito;
+import com.digitec.cobranca.service.AutorizadorCielo;
 
 public class MainDecorator {
 
@@ -36,7 +38,7 @@ public class MainDecorator {
 			
 			Cliente cliente = new Cliente(nomeCliente, cpf);
 			CartaoCredito cartaoCredito = new CartaoCredito(cartao, nomeCartao, 
-					YearMonth.of(anoVencimento, mesVencimento), codigoSeguranca)
+					YearMonth.of(anoVencimento, mesVencimento), codigoSeguranca);
 					
 			AutorizadorCartaoCredito autorizador = new AutorizadorCielo();
 			autorizador.autorizar(cliente, cartaoCredito, valor);
